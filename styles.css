@@ -53,21 +53,22 @@ body {
 
 
 
-.primary-button {
-    background-color: var(--primary-color);
+.hero-section .button {
+    background-color: black;
     color: white;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border-radius: 50px;
+    padding: 12px 24px; /* Increases padding for a larger button */
+    border-radius: 25px; /* Makes the button fully rounded */
+    font-size: 1.1em; /* Increases font size slightly */
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.primary-button:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.05);
+.hero-section .button:hover {
+    background-color: #333; /* Slightly lighter black on hover */
 }
+
 
 /* Seksjoner */
 section {
