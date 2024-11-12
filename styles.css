@@ -42,9 +42,9 @@
     }
 
     .navbar-button {
-        font-size: 14px; /* Smaller font size */
-        padding: 8px 16px; /* Adjusted padding */
-        border-radius: 15px; /* Smaller button shape */
+        font-size: 7px; /* Smaller font size */
+        padding: 4px 8px; /* Adjusted padding */
+        border-radius: 10px; /* Smaller button shape */
     }
 }
 
