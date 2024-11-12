@@ -57,13 +57,14 @@ body {
 }
 
 .hero-section .button {
+    display: inline-block;
     background-color: black;
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
     font-size: 1.1em;
+    text-align: center;
     text-decoration: none;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -71,6 +72,7 @@ body {
 .hero-section .button:hover {
     background-color: #333;
 }
+
 
 
 
