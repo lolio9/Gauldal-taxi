@@ -39,6 +39,22 @@
     background-color: #0a57b5;
 }
 
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .navbar-links {
+        flex-direction: column-reverse; /* Reverse the order on mobile */
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Desktop Styling */
+@media (min-width: 769px) {
+    .navbar-links {
+        flex-direction: row; /* Normal order on desktop */
+    }
+}
+
 
 /* Reset */
 *,
