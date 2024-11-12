@@ -56,7 +56,7 @@ body {
 .hero-section .button {
     background-color: black;
     color: white;
-    padding: 12px 24px; /* Increases padding for a larger button */
+    padding: 20px 24px; /* Increases padding for a larger button */
     border-radius: 25px; /* Makes the button fully rounded */
     font-size: 1.1em; /* Increases font size slightly */
     text-decoration: none;
