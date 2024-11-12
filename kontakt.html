@@ -1,184 +1,275 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt oss - Støren Taxi</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
 
-        /* Navigation Bar Styles */
+
+    <style>
+        /* Navigation Bar Styling */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
             background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-
+    
         .navbar-logo {
             font-size: 24px;
             font-weight: bold;
-            color: #333;
+            color: #2c3e50;
         }
-
+    
         .navbar-links {
             display: flex;
             gap: 15px;
         }
-
+    
         .navbar-link {
-            color: #333;
+            color: #2c3e50;
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
         }
-
+    
         .navbar-link:hover {
-            color: #1a73e8;
+            color: #3498db;
         }
-
+    
         .navbar-button {
             padding: 10px 20px;
-            background-color: #1a73e8;
+            background-color: #3498db;
             color: #ffffff;
             border-radius: 20px;
             text-decoration: none;
             font-size: 18px;
             transition: background-color 0.3s ease;
         }
-
+    
         .navbar-button:hover {
-            background-color: #0a57b5;
+            background-color: #2980b9;
         }
+    </style>
+    
+    
 
-        /* Main Content Styles */
-        .contact-section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-logo">Støren Taxi</div>
+    <div class="navbar-links">
+        <a href="index.html" class="navbar-link">Hjem</a>
+        <a href="kontakt.html" class="navbar-button">Kontakt oss</a>
+    </div>
+</nav>
 
-        .contact-section h1 {
-            font-size: 2.5em;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt oss - Støren Taxi</title>
+    <style>
+        /* Reset and General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
             color: #333;
-            margin-bottom: 20px;
+        }
+        body {
+            background-color: #f4f4f9;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
 
-        .contact-section p {
-            font-size: 1.1em;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        /* Header Styling */
+        .header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            font-size: 2rem;
         }
 
-        /* Contact Form Styles */
-        .contact-form {
+        /* Main Container */
+        .container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            padding: 3rem 2rem;
         }
 
-        .contact-form input, .contact-form textarea {
+        /* Contact Info Section */
+        .contact-info {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
             width: 100%;
-            padding: 12px;
-            font-size: 1em;
+            max-width: 800px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.1rem;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            resize: none;
+            font-size: 1rem;
         }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #1a73e8;
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: #3498db;
+            box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.3);
         }
-
-        .contact-form button {
-            padding: 15px;
-            font-size: 1.1em;
-            font-weight: bold;
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .submit-btn {
+            background-color: #3498db;
             color: #fff;
-            background-color: #1a73e8;
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
-        .contact-form button:hover {
-            background-color: #0a57b5;
+        .submit-btn:hover {
+            background-color: #2980b9;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            text-align: center;
-            color: #888;
-            font-size: 0.9em;
-            border-top: 1px solid #eee;
+        /* Map Section */
+        .map {
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+        .map iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 300px;
+            border: 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Media Query for Responsive Design */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .contact-section {
-                padding: 20px;
-            }
-
-            .navbar-logo {
-                font-size: 20px;
-            }
-
-            .navbar-link, .navbar-button {
-                font-size: 16px;
-            }
-
-            .contact-section h1 {
-                font-size: 2em;
+            .contact-info, .contact-form, .map iframe {
+                width: 100%;
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-logo">Støren Taxi</div>
-        <div class="navbar-links">
-            <a href="index.html" class="navbar-link">Hjem</a>
-            <a href="kontakt.html" class="navbar-button">Kontakt oss</a>
-        </div>
-    </nav>
-
-    <!-- Contact Section -->
-    <div class="contact-section">
-        <h1>Kontakt oss</h1>
-        <p>Vi er her for å hjelpe deg! Ta kontakt med oss for spørsmål eller bestillinger. Du kan bruke skjemaet nedenfor, eller ringe oss direkte på telefon.</p>
-        
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Navn *" required>
-            <input type="email" name="email" placeholder="E-post *" required>
-            <input type="tel" name="phone" placeholder="Telefon *" required>
-            <textarea name="message" rows="5" placeholder="Din henvendelse *" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <!-- Header -->
+    <div class="header">
+        Kontakt oss
     </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 Støren Taxi. Alle rettigheter forbeholdt.
-    </footer>
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <h2>Støren Taxi</h2>
+            <div class="info-item">
+                <strong>Adresse:</strong>
+                <span>Kåret 10, 7290 Støren</span>
+            </div>
+            <div class="info-item">
+                <strong>Telefon:</strong>
+                <a href="tel:+4772431050">72 43 10 50</a>
+            </div>
+            <div class="info-item">
+                <strong>E-post:</strong>
+                <a href="mailto:lars_jonli@hotmail.com">lars_jonli@hotmail.com</a>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Send oss en melding</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Navn *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-post *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Din henvendelse *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </section>
+
+        <!-- Map -->
+        <section class="map">
+            <h2>Her finner du oss:</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.8928579125056!2d10.288991715790186!3d63.04319828089944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d116fa3246dd3%3A0x4a21c3c4f8a8d6cb!2sK%C3%A5ret%2010%2C%207290%20St%C3%B8ren!5e0!3m2!1sen!2sno!4v1676626900098!5m2!1sen!2sno" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </div>
 
 </body>
 </html>
