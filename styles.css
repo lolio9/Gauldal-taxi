@@ -37,16 +37,20 @@
 /* Mobile Styling */
 @media (max-width: 768px) {
     .navbar-links {
-        flex-direction: row !important; /* Force row layout on mobile */
-        gap: 10px;
+        gap: 5px;
     }
 
     .navbar-button {
-        font-size: 7px !important; /* Smaller font size */
-        padding: 4px 8px !important; /* Adjusted padding */
-        border-radius: 10px !important; /* Smaller button shape */
+        font-size: 14px !important; /* Smaller font size */
+        padding: 6px 12px !important; /* Smaller padding */
+        border-radius: 12px !important; /* Smaller border-radius */
+    }
+
+    .navbar-logo {
+        font-size: 20px; /* Slightly smaller logo */
     }
 }
+
 
 
 /* Desktop Styling */
