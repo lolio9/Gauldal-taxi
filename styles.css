@@ -46,19 +46,22 @@ body {
     z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2; /* Ensures content appears above the overlay */
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px; /* Adds space between paragraph and button */
+}
 
 .hero-section .button {
     background-color: black;
     color: white;
-    padding: 20px 24px; /* Increases padding for a larger button */
-    border-radius: 25px; /* Makes the button fully rounded */
-    font-size: 1.1em; /* Increases font size slightly */
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1.1em;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -66,8 +69,9 @@ body {
 }
 
 .hero-section .button:hover {
-    background-color: #333; /* Slightly lighter black on hover */
+    background-color: #333;
 }
+
 
 
 /* Seksjoner */
