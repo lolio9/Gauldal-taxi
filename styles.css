@@ -22,7 +22,7 @@ body {
 
 /* Toppseksjon (hero) */
 .hero-section {
-    background-image: url('https://source.unsplash.com/1600x900/?taxi'); /* Sett riktig bilde-URL her */
+    background-image: url('https://www.mercedestaxiclub.gr/images/slider/taxi-vip.jpg'); /* Sett riktig bilde-URL her */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Sørger for at seksjonen dekker hele skjermen */
