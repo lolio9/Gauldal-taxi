@@ -22,10 +22,10 @@ body {
 
 /* Toppseksjon (hero) */
 .hero-section {
-    background-image: url('https://source.unsplash.com/1600x900/?taxi');
+    background-image: url('https://source.unsplash.com/1600x900/?taxi'); /* Sett riktig bilde-URL her */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100vh; /* Sørger for at seksjonen dekker hele skjermen */
     display: flex;
     flex-direction: column;
     align-items: center;
