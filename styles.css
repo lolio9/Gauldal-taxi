@@ -36,14 +36,24 @@
 
 /* Mobile Styling */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .navbar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 5px;
+        justify-content: center;
+        width: 100%;
     }
 
     .navbar-button {
-        font-size: 14px !important; /* Smaller font size */
-        padding: 6px 12px !important; /* Smaller padding */
-        border-radius: 12px !important; /* Smaller border-radius */
+        font-size: 12px !important; /* Smaller font size */
+        padding: 5px 10px !important; /* Smaller padding */
+        border-radius: 8px !important; /* Smaller border-radius */
+        margin: 2px 0; /* Additional margin to reduce stacking space */
     }
 
     .navbar-logo {
