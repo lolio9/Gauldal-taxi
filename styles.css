@@ -14,7 +14,7 @@ body {
 
 /* Farger */
 :root {
-    --primary-color: #ff9900;
+    --primary-color: #000000; /* Svart knapp */
     --secondary-color: #333;
     --background-color: #f4f4f4;
     --accent-color: #0056b3;
@@ -56,27 +56,29 @@ body {
     color: white;
     padding: 15px 30px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 50px; /* Rundere knapp */
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
 }
 
 .primary-button:hover {
-    background-color: #cc7a00;
+    background-color: #333333;
+    transform: scale(1.05);
 }
 
 /* Tjenesteseksjon */
-.services {
+.services, .about, .contact-section {
     padding: 50px 20px;
     text-align: center;
     background-color: #ffffff;
+    margin-top: 30px;
 }
 
-.services h2 {
+.services h2, .about h2, .contact-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: var(--secondary-color);
@@ -85,28 +87,11 @@ body {
     transition: opacity 0.5s, transform 0.5s;
 }
 
-.service-item {
+.service-item, .about p, .contact-section p {
     margin-bottom: 20px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
-}
-
-.service-item h3 {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-}
-
-.service-item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Kontaktseksjon */
-.contact-section {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #ffffff;
 }
 
 /* Footer */
@@ -124,4 +109,28 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsivt design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .primary-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .services h2, .about h2, .contact-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.2rem;
+    }
 }
