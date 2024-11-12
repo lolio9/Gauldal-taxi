@@ -1,74 +1,104 @@
-/* Generell stil */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     color: #333;
     background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+
+
+
+.hero-section {
+    background-image: url('https://source.unsplash.com/1600x900/?taxi'); /* Midlertidig bakgrunnsbilde */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
+.primary-button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.primary-button:hover {
+    background-color: #cc7a00;
 }
 
-/* Hovedinnhold */
-main {
-    padding: 20px;
+
+
+
+.services {
+    padding: 50px 20px;
     text-align: center;
+    background-color: #ffffff;
 }
 
-h2 {
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.service-item {
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
     color: #333;
 }
 
-/* Knapper */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+.service-item p {
+    font-size: 1rem;
+    color: #666;
 }
 
-.button:hover {
-    background-color: #555;
+
+
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff;
 }
 
-/* Footer */
+
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
