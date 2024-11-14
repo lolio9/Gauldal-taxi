@@ -141,12 +141,13 @@
 }
 
 .primary-button {
+    display: inline-block;
     background-color: #ff9900;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
+    padding: 12px 24px;
     border-radius: 25px;
+    font-size: 1.1rem;
+    text-decoration: none;
     cursor: pointer;
     transition: 0.3s;
 }
