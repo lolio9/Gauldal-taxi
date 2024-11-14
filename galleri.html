@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galleri - Støren Taxi</title>
     <style>
-        /* Additional Gallery-Specific Styling */
+        /* Gallery-Specific Styling */
         .gallery-header {
             background-color: #1a73e8;
             color: white;
@@ -34,6 +34,7 @@
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -45,6 +46,42 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -69,20 +106,45 @@
 
 <!-- Gallery Section -->
 <div class="gallery-container">
-    <!-- Gallery Item 1 -->
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(this)">
         <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
     </div>
-    <!-- Gallery Item 2 -->
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(this)">
         <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
     </div>
-    <!-- Gallery Item 3 -->
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openModal(this)">
         <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
     </div>
-    <!-- Add more gallery items as needed -->
 </div>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="Enlarged Image">
+    </div>
+</div>
+
+<script>
+    function openModal(element) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "flex";
+        modalImg.src = element.querySelector("img").src;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>
