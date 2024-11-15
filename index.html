@@ -7,43 +7,76 @@
         <button onclick="acceptCookies()">Accept</button>
     </div>
 
-    <script>
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    <style>
+        /* Cookie Consent Styling */
+        #cookieConsent {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        function getCookie(name) {
-            const cname = name + "=";
-            const decodedCookie = decodeURIComponent(document.cookie);
-            const cookieArr = decodedCookie.split(';');
-            for (let i = 0; i < cookieArr.length; i++) {
-                let c = cookieArr[i].trim();
-                if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
-            }
-            return "";
+        #cookieConsent button {
+            margin-left: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #1a73e8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        function deleteCookie(name) {
-            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        #cookieConsent button:hover {
+            background-color: #145bb2;
         }
+    </style>
 
-        function checkCookieConsent() {
-            const consent = getCookie("cookieConsent");
-            if (!consent) {
-                document.getElementById("cookieConsent").style.display = "block";
-            }
+<div id="cookieConsent">
+    Vi bruker informasjonskapsler (cookies) for å forbedre din opplevelse på vår nettside.
+    Ved å bruke nettstedet, godtar du vår bruk av informasjonskapsler.
+    <button onclick="acceptCookies()">Aksepter</button>
+</div>
+
+<script>
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookieArr = decodedCookie.split(';');
+        for (let i = 0; i < cookieArr.length; i++) {
+            let c = cookieArr[i].trim();
+            if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
         }
+        return "";
+    }
 
-        function acceptCookies() {
-            setCookie("cookieConsent", "true", 365);
-            document.getElementById("cookieConsent").style.display = "none";
+    function checkCookieConsent() {
+        const consent = getCookie("cookieConsent");
+        if (!consent) {
+            document.getElementById("cookieConsent").style.display = "block";
         }
+    }
 
-        checkCookieConsent();
-    </script>
+    function acceptCookies() {
+        setCookie("cookieConsent", "true", 365);
+        document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    checkCookieConsent();
+</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
