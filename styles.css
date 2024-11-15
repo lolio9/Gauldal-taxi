@@ -56,9 +56,8 @@
 }
 
 .navbar-logo img {
-    height: 40px; /* Adjust based on the desired logo height */
+    height: 80px; /* Increase this value for a larger logo */
     width: auto;
-    margin-right: 1rem;
     display: block;
 }
 
