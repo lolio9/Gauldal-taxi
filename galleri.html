@@ -79,7 +79,7 @@
         const auth = firebase.getAuth(app);
         const storage = firebase.getStorage(app);
 
-        const adminEmails = ["your_admin_email@gmail.com"];
+        const adminEmails = ["ajonli76@gmail.com"];
 
         firebase.onAuthStateChanged(auth, (user) => {
             if (user && adminEmails.includes(user.email)) {
