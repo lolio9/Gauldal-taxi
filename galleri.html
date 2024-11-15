@@ -1,101 +1,31 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-
-    <link rel="icon" href="Logo.jpg" type="image/png">
-
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galleri - Støren Taxi</title>
+    <link rel="icon" href="Logo.jpg" type="image/png">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Gallery-Specific Styling */
-        .gallery-header {
-            background-color: #1a73e8;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .gallery-header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
+        .gallery-header { background: #1a73e8; color: #fff; padding: 4rem 2rem; text-align: center; }
+        .gallery-header h1 { margin: 0; font-size: 2.5rem; }
         .gallery-container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            max-width: 1200px; margin: 3rem auto; padding: 0 2rem; display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;
         }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: 0.3s; cursor: pointer; }
+        .gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); align-items: center; justify-content: center; z-index: 10;
         }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    overflow: hidden;
-}
-
-.modal-content img {
-    width: auto;
-    height: auto;
-    max-width: 80vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    object-fit: contain;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
+        .modal-content { max-width: 90%; max-height: 90%; }
+        .modal-content img { max-width: 80vw; max-height: 80vh; border-radius: 8px; object-fit: contain; }
+        .close-button { position: absolute; top: 10px; right: 10px; color: #fff; font-size: 30px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
 <nav class="navbar">
     <div class="navbar-logo">Støren Taxi</div>
     <div class="navbar-links">
@@ -106,44 +36,23 @@
     </div>
 </nav>
 
-<!-- Header -->
 <div class="gallery-header">
     <h1>Galleri</h1>
     <p>Utforsk noen av våre beste øyeblikk og tjenester</p>
 </div>
 
-<!-- Gallery Section -->
 <div class="gallery-container">
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 1.jpg" alt="Gallery Image 1">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 2.jpg" alt="Gallery Image 2">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 3.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 4.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 5.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 6.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 7.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 8.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-item" onclick="openModal(this)">
-        <img src="Taxi 9.jpg" alt="Gallery Image 3">
-    </div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 1.jpg" alt="Gallery Image 1"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 2.jpg" alt="Gallery Image 2"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 3.jpg" alt="Gallery Image 3"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 4.jpg" alt="Gallery Image 4"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 5.jpg" alt="Gallery Image 5"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 6.jpg" alt="Gallery Image 6"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 7.jpg" alt="Gallery Image 7"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 8.jpg" alt="Gallery Image 8"></div>
+    <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 9.jpg" alt="Gallery Image 9"></div>
 </div>
 
-<!-- Modal -->
 <div id="imageModal" class="modal">
     <span class="close-button" onclick="closeModal()">&times;</span>
     <div class="modal-content">
@@ -153,22 +62,14 @@
 
 <script>
     function openModal(element) {
-        var modal = document.getElementById("imageModal");
-        var modalImg = document.getElementById("modalImage");
-        modal.style.display = "flex";
-        modalImg.src = element.querySelector("img").src;
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = element.querySelector("img").src;
     }
-
     function closeModal() {
-        var modal = document.getElementById("imageModal");
-        modal.style.display = "none";
+        document.getElementById("imageModal").style.display = "none";
     }
-
     window.onclick = function(event) {
-        var modal = document.getElementById("imageModal");
-        if (event.target == modal) {
-            closeModal();
-        }
+        if (event.target === document.getElementById("imageModal")) closeModal();
     }
 </script>
 
