@@ -23,3 +23,4 @@ function handleScrollAnimation() {
 // Lytter til scroll-event
 window.addEventListener('scroll', handleScrollAnimation);
 window.addEventListener('load', handleScrollAnimation); // Sjekker ved last
+
