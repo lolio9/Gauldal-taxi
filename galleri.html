@@ -56,54 +56,6 @@
     <div class="gallery-item" onclick="openModal(this)"><img src="Taxi 9.jpg" alt="Gallery Image 9"></div>
 </div>
 
-    <div id="admin-panel">
-        <input type="file" id="fileInput" style="display: none;" />
-        <button id="uploadButton" style="display: none;">Upload Image</button>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"></script>
-
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCHriWkReSF26To4dEVFO7T_cvuGMid-jM",
-            authDomain: "gauldal-taxi.firebaseapp.com",
-            projectId: "gauldal-taxi",
-            storageBucket: "gauldal-taxi.firebasestorage.app",
-            messagingSenderId: "16133383822",
-            appId: "1:16133383822:web:2ed9dc46561cb9b26f4bdf"
-        };
-
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.getAuth(app);
-        const storage = firebase.getStorage(app);
-
-        const adminEmails = ["ajonli76@gmail.com"];
-
-        firebase.onAuthStateChanged(auth, (user) => {
-            if (user && adminEmails.includes(user.email)) {
-                document.getElementById("uploadButton").style.display = "block";
-            }
-        });
-
-        document.getElementById("uploadButton").addEventListener("click", () => {
-            document.getElementById("fileInput").click();
-        });
-
-        document.getElementById("fileInput").addEventListener("change", async (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const storageRef = firebase.ref(storage, `gallery/${file.name}`);
-                await firebase.uploadBytes(storageRef, file);
-                alert("Image uploaded successfully!");
-            }
-        });
-
-        // Example authentication (replace with your real method)
-        firebase.signInWithPopup(auth, new firebase.GoogleAuthProvider());
-    </script>
-
 <div id="imageModal" class="modal">
     <span class="close-button" onclick="closeModal()">&times;</span>
     <div class="modal-content">
