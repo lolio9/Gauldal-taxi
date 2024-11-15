@@ -55,6 +55,14 @@
     }
 }
 
+.navbar-logo img {
+    height: 40px; /* Adjust based on the desired logo height */
+    width: auto;
+    margin-right: 1rem;
+    display: block;
+}
+
+
 .hero-section {
     position: relative;
     background-image: url('Taxi\ 3.jpg');
