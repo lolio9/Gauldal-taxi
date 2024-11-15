@@ -1,164 +1,37 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-
     <link rel="icon" href="Logo.jpg" type="image/png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt oss - Støren Taxi</title>
-
-    <!-- Link to the Main Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* Reset and General Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
-        body {
-            background-color: #f4f4f9;
-            overflow-x: hidden;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; color: #333; }
+        body { background-color: #f4f4f9; overflow-x: hidden; }
+        h1, h2, h3 { color: #2c3e50; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        /* Header Styling */
-        .header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        /* Main Container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 3rem 2rem;
-        }
-
-        /* Contact Info Section */
-        .contact-info {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-        .contact-info h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-            font-size: 1.1rem;
-        }
-        .info-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Contact Form Section */
-        .contact-form {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: #333;
-        }
-        .form-group input,
-        .form-group textarea {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-            box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.3);
-        }
-        .form-group textarea {
-            resize: vertical;
-            height: 100px;
-        }
-        .submit-btn {
-            background-color: #3498db;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-
-        /* Map Section */
-        .map {
-            margin-top: 2rem;
-            width: 100%;
-            max-width: 800px;
-        }
-        .map iframe {
-            border-radius: 10px;
-            width: 100%;
-            height: 300px;
-            border: 0;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-info, .contact-form, .map iframe {
-                width: 100%;
-                padding: 1.5rem;
-            }
-        }
+        .header { background: #2c3e50; color: #fff; padding: 2rem; text-align: center; font-size: 2rem; }
+        .container { display: flex; flex-direction: column; align-items: center; padding: 3rem 2rem; }
+        .contact-info, .contact-form { background-color: #fff; border-radius: 10px; padding: 2rem; max-width: 800px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); width: 100%; margin-bottom: 2rem; }
+        .contact-info h2, .contact-form h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+        .info-item { display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #ddd; font-size: 1.1rem; }
+        .info-item:last-child { border-bottom: none; }
+        .form-group { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+        .form-group label { margin-bottom: 0.5rem; font-size: 1rem; color: #333; }
+        .form-group input, .form-group textarea { padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #3498db; box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.3); }
+        .form-group textarea { resize: vertical; height: 100px; }
+        .submit-btn { background-color: #3498db; color: #fff; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; }
+        .submit-btn:hover { background-color: #2980b9; }
+        .map { margin-top: 2rem; max-width: 800px; width: 100%; }
+        .map iframe { border-radius: 10px; width: 100%; height: 300px; border: 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); }
+        @media (max-width: 768px) { .contact-info, .contact-form, .map iframe { padding: 1.5rem; width: 100%; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-logo">Støren Taxi</div>
         <div class="navbar-links">
@@ -169,63 +42,33 @@
         </div>
     </nav>
 
-    <!-- Header -->
     <div class="header" style="background-color: #1a73e8; color: white; padding: 4rem 2rem; text-align: center;">
         Kontakt oss
     </div>
 
-    <!-- Main Content -->
     <div class="container">
-
-        <!-- Contact Information -->
         <section class="contact-info">
             <h2>Støren Taxi</h2>
-            <div class="info-item">
-                <strong>Adresse:</strong>
-                <span>Svartøya 9, 7290 Støren</span>
-            </div>
-            <div class="info-item">
-                <strong>Telefon:</strong>
-                <a href="tel:+4772431050">72 43 10 50</a>
-            </div>
-            <div class="info-item">
-                <strong>E-post:</strong>
-                <a href="mailto:lars_jonli@hotmail.com">lars_jonli@hotmail.com</a>
-            </div>
+            <div class="info-item"><strong>Adresse:</strong><span>Svartøya 9, 7290 Støren</span></div>
+            <div class="info-item"><strong>Telefon:</strong><a href="tel:+4772431050">72 43 10 50</a></div>
+            <div class="info-item"><strong>E-post:</strong><a href="mailto:lars_jonli@hotmail.com">lars_jonli@hotmail.com</a></div>
         </section>
 
-        <!-- Contact Form -->
         <section class="contact-form">
             <h2>Send oss en melding</h2>
             <form>
-
-                <div class="form-group">
-                    <label for="name">Navn *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-post *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefon *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Din henvendelse *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
+                <div class="form-group"><label for="name">Navn *</label><input type="text" id="name" name="name" required></div>
+                <div class="form-group"><label for="email">E-post *</label><input type="email" id="email" name="email" required></div>
+                <div class="form-group"><label for="phone">Telefon *</label><input type="tel" id="phone" name="phone" required></div>
+                <div class="form-group"><label for="message">Din henvendelse *</label><textarea id="message" name="message" required></textarea></div>
                 <button type="submit" class="submit-btn">Send</button>
             </form>
         </section>
 
-        <!-- Map -->
-<section class="map">
-    <h2>Her finner du oss:</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.0877330138813!2d10.282445276224432!3d63.04317619711053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d116fa3246dd3%3A0x4a21c3c4f8a8d6cb!2sSvart%C3%B8ya%2C%207290%20St%C3%B8ren!5e0!3m2!1sen!2sno!4v1676626900098!5m2!1sen!2sno" allowfullscreen="" loading="lazy"></iframe>
-</section>
-
+        <section class="map">
+            <h2>Her finner du oss:</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.0877330138813!2d10.282445276224432!3d63.04317619711053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d116fa3246dd3%3A0x4a21c3c4f8a8d6cb!2sSvart%C3%B8ya%2C%207290%20St%C3%B8ren!5e0!3m2!1sen!2sno!4v1676626900098!5m2!1sen!2sno" allowfullscreen loading="lazy"></iframe>
+        </section>
     </div>
-
 </body>
 </html>
